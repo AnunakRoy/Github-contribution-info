@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Data Fetcher</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Enter GitHub Details</h1>
+    <form action="/submit" method="post">
+      <label for="githubLink">GitHub Link:</label>
+      <input type="text" id="githubLink" name="githubLink" required>
+      
+      <label for="bearerToken">Bearer Token:</label>
+      <input type="text" id="bearerToken" name="bearerToken" required>
+      
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

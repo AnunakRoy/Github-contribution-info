@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Contribution Graph</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+<div class="container">
+  <div class="graph-container">
+    <h1>GitHub profile of <%= githubUsername %></h1>
+    <div class="graph-img" id="graph-img">
+      <!-- <img class="graph-image" src="/images/ReadingBooks.jpg" alt="Reading books"> -->
+    </div>
+    <div class="profile-image">
+      <img class="avatar" src="<%= avatarUrl %>" alt="GitHub Profile Image">
+    </div>
+  </div>
+
+<ul>
+  <h2>Latest Repositories</h2>
+  <!-- listing the top 5 repository by date -->
+  <% repositories.forEach(repo => { %>
+    <li>
+      <strong><%= repo.name %></strong>
+      <p><%= repo.description || 'No description available' %></p>
+      <p>Owner: <%= repo.owner.login %></p>
+      <p>Stars: <%= repo.stargazerCount %></p>
+      <hr>
+    </li>
+  <% }); %>
+</ul>
+</div>
+<script>
+const contributionGraph = JSON.parse('<%- JSON.stringify(contributionGraph) %>');
+</script>
+<script src="/js/graph.js" charset="UTF-8"></script>
+
+
+</body>
+</html>
